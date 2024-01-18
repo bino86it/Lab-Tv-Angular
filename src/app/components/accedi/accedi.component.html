@@ -1,0 +1,31 @@
+<p routerLink="accedi"></p>
+
+
+<div class="box">
+    <h2>ACCEDI</h2>
+  
+    <form (ngSubmit)="submitForm()" #loginForm="ngForm">
+
+      <mat-form-field>
+        <mat-label>la tua Email</mat-label>
+        <input type="email" matInput placeholder="pat@example.com" name="email" ngModel required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
+        <mat-error *ngIf="loginForm['controls']['email']?.hasError('required')">L'email è obbligatoria</mat-error>
+        <mat-error *ngIf="loginForm['controls']['email']?.hasError('pattern')">Inserisci un indirizzo email valido</mat-error>
+      </mat-form-field>
+      
+      <mat-form-field>
+        <mat-label>la tua password</mat-label>
+        <input type="password" matInput name="password" ngModel required pattern="^(?=.*[A-Z])(?=.*\d).+$">
+        <mat-error *ngIf="loginForm['controls']['password']?.hasError('required')">La password è obbligatoria</mat-error>
+        <mat-error *ngIf="loginForm['controls']['password']?.hasError('pattern')">La password deve includere almeno una maiuscola e un numero</mat-error>
+      </mat-form-field>
+      
+      
+    
+      <button type="submit" mat-raised-button color="warn">ENTRA</button>
+    
+    </form>
+    
+  
+  
+  </div>

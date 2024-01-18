@@ -1,0 +1,37 @@
+
+*{font-family: 'Montserrat', sans-serif;}
+
+.box{
+    width:50%;
+    display: flex;
+    flex-direction: column;
+    margin:2em auto;
+    padding:2em;
+    text-align: center;
+}
+
+h2{
+    color:var(--testo-colore);
+    font-family: 'Montserrat', sans-serif;
+}
+
+form{
+    margin:0 auto;
+    display: grid;
+    grid-template-columns: auto;
+    width: 50%;
+}
+
+button:hover{opacity: 0.5;}
+
+
+  label{
+    color:var(--testo-colore);
+    width:100%;
+    display: block;
+    text-align: left;
+    cursor: pointer;
+    margin:2em 0;
+}
+
+#checkbox{margin-right: 1em;}

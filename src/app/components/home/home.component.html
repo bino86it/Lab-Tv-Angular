@@ -1,0 +1,17 @@
+<p routerLink="home"></p>
+
+<div class="contenitore">
+  <mat-card *ngFor="let movie of movies" [routerLink]="['/dettaglio', movie.id]" class="example-card">
+    
+      <mat-card-header>
+        <mat-card-title>{{movie.title}}</mat-card-title>
+        <mat-card-subtitle>{{movie.release_date | date:'yyyy' }}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="https://image.tmdb.org/t/p/w200{{movie.poster_path}}" alt="{{movie.title}}" class="movie-poster">
+    
+    </mat-card>
+</div>
+
+
+
+

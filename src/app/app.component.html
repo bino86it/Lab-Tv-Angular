@@ -1,0 +1,43 @@
+
+  <header>
+    <a href="http://localhost:4200/home"><H1>LAB TV</H1></a>
+
+    <!-- MENU DESKTOP/TABLET -->
+    <nav>
+      <button class="desktopButton" routerLink="/home" mat-button><mat-icon  fontIcon="home"></mat-icon>HOME</button>
+      <button class="desktopButton" routerLink="/accedi" mat-button><mat-icon  fontIcon="login"></mat-icon>ACCEDI</button>
+      <button class="desktopButton" routerLink="/cerca" mat-button><mat-icon  fontIcon="search"></mat-icon>CERCA</button>
+      <button class="desktopButton" routerLink="/contatti" mat-button><mat-icon  fontIcon="mail"></mat-icon>CONTATTI</button>
+    
+        <!-- MENU SMARTPHONE -->
+      <button id="hamburger" mat-button [matMenuTriggerFor]="menu"><mat-icon  fontIcon="menu"></mat-icon></button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="/accedi">ACCEDI</button>
+        <button mat-menu-item routerLink="/cerca">CERCA</button>
+        <button mat-menu-item routerLink="/contatti">CONTATTI</button>
+      </mat-menu>
+    </nav>
+  </header>
+
+
+<router-outlet></router-outlet>
+
+
+
+<footer>
+  <ul>
+    <li><a href="https://www.youtube.com/" target="_blank"><img src="../assets/Img/5296521_play_video_vlog_youtube_youtube logo_icon.png" alt="logo youtube"></a></li>
+    <li><a href="https://www.instagram.com/labfortraining.it/" target="_blank"><img src="../assets/Img/5296765_camera_instagram_instagram logo_icon.png" alt="logo instagram"></a></li>
+    <li><a href="https://www.facebook.com/labfortraining" target="_blank"><img src="../assets/Img/5365678_fb_facebook_facebook logo_icon.png" alt="logo facebook"></a></li>
+    <li> <a href="https://twitter.com/?lang=it" target="_blank"><img src="../assets/Img/5296514_bird_tweet_twitter_twitter logo_icon.png" alt="logo twitter"></a></li>
+  </ul>
+  <ul id="link-footer">
+    <li>Lavora con noi</li>
+    <li>I nostri partner</li>
+    <li>Informativa privacy</li>
+    <li>Condizioni Generali del Servizio</li>
+    <li>Cookie Policy</li>
+    <li>Assistenza</li>
+  </ul>
+  <p>© 1996-2024, Lab Tv, Inc. or its affiliates</p>
+</footer>

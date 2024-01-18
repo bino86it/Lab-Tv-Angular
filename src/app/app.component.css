@@ -1,0 +1,153 @@
+
+
+h1{
+    margin:0;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%); 
+    color:#d32f2f;
+    font-family: 'Shadows Into Light', cursive;
+    font-size:3em;
+}
+
+
+header{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content:flex-end;
+    background-color: #142524;
+    padding:2em;
+}
+
+
+
+.mat-mdc-button:not(:disabled){
+    color:#f9f9f9;
+    font-family: 'Montserrat', sans-serif;
+    border-bottom:solid #001211 2px;
+    margin-left:1.5em
+ 
+}
+
+.mat-mdc-button:not(:disabled):hover{opacity: 0.5;}
+
+::ng-deep .mat-mdc-menu-content.ng-tns-c2786309385-0 {
+    background-color: #142524;
+    display: flex;
+    flex-direction: column;
+    padding:0;
+}
+
+  ::ng-deep .mat-mdc-menu-content.ng-tns-c2786309385-0 button {
+    /* Stili per gli elementi del menu */
+    color: var(--testo-colore); 
+    background-color: #142524;
+  }
+  
+
+/* FOOTER */
+
+footer {
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 0;
+}
+
+ul{
+    display:flex;
+    list-style: none;
+    flex-direction: row;
+    justify-content: center;
+    padding-top:10px;
+}
+
+ul:first-child{margin-top: 60px;}
+
+
+li{
+    margin:0 30px;
+    color:var(--testo-colore);
+    cursor: pointer;
+}
+
+li:hover{opacity: 0.5}
+
+#link-footer li{padding:1em}
+
+footer img{width: 32px;}
+
+
+p{
+    text-align: center;
+    color:var(--testo-colore);
+    padding-bottom:10px;
+}
+
+
+
+
+/* RESPONSIVE */
+
+@media screen and (min-width: 1200px) {
+  
+    #hamburger{display:none;}
+
+  }
+
+
+@media screen and (max-width: 1200px) {
+    header a h1{
+      left:0;
+      transform: translate(0, -50%); 
+      margin-left:28px;
+    }
+
+    #hamburger{display:none;}
+
+   footer{margin:0;padding:0;}
+
+  }
+
+
+  @media screen and (max-width: 768px) {
+
+    .desktopButton{display: none;}
+
+    footer ul{
+        flex-direction: row;
+        justify-content: center;
+        padding: 0;
+    }
+
+    footer ul li{
+        padding:5px;
+        margin:5px;
+    }
+
+    #hamburger{display:block;}
+  
+
+}
+
+@media screen and (max-width: 468px) {
+
+    .contenitore{
+        margin-top:1em;
+    }
+
+
+    #link-footer{
+        flex-direction: column;
+        text-align: center;
+        padding: 0;
+    }
+
+    footer ul li{
+        padding:5px;
+        margin:5px;
+    }
+
+    #hamburger{display:block;}
+
+} 

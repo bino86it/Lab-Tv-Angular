@@ -1,0 +1,65 @@
+<p routerLink="dettaglio"></p>
+
+
+<div class="contenitore">
+  
+  <!-- X di chiusura -->
+  <div class="x">
+    <a (click)="closeDetails()" href="#" id="close">X</a>
+  </div>
+
+ <h2>{{movieDetails.title}}</h2>
+
+ <h3>{{movieDetails.release_date | date:'yyyy'}}</h3>
+ 
+
+ <section>
+  
+  
+  <img mat-card-image [src]="'https://image.tmdb.org/t/p/w500' + movieDetails.poster_path" alt="{{ movieDetails.title }}">
+
+  <div>
+
+    <div class="contenitore-trailer">
+      <iframe [src]="getVideoUrl(trailers[0])" frameborder="0" allowfullscreen mute allow="autoplay" muted></iframe>
+    </div>
+
+    <p id="trama">{{movieDetails.overview}}</p>
+
+    <h4>Un film di {{registi}}</h4>
+
+    
+    <!-- cast -->
+    <ul>
+      <p>Con: &#160; 
+        <ng-container *ngFor="let attore of attori; let last = last">
+          {{ attore.name }}{{ !last ? ', ' : '.' }}
+        </ng-container>
+      </p>
+    </ul>
+    
+    <!-- genere -->
+    <h4>{{movieDetails.genres[0].name}}</h4>
+    <h4 id="durata">Durata : {{movieDetails.runtime}}'</h4>
+
+    
+  </div>
+
+ <!-- film consigliati -->
+
+</section>
+<h4>Potrebbero piacerti </h4>
+<div class="similariContenitore">
+  <mat-card *ngFor="let simile of similari" [routerLink]="['/dettaglio', movieId]" class="example-card">
+      
+    <mat-card-header>
+      <mat-card-title>{{simile.title}}</mat-card-title>
+      <mat-card-subtitle>{{simile.release_date | date:'yyyy' }}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="https://image.tmdb.org/t/p/w200{{simile.poster_path}}" alt="{{simile.title}}" class="movie-poster">
+  
+  </mat-card>
+</div>
+
+</div>
+

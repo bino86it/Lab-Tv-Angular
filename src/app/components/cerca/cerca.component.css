@@ -1,0 +1,78 @@
+/* BARRA DI RICERCA  */
+
+mat-form-field{
+    border:solid red 1px;
+    width: 70%;
+    margin:0 auto;
+    padding:0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+input{
+    color: var(--sfondo-colore);
+    width: 70%;
+    margin:0 auto;
+    padding:0;
+    height: 2.2em;
+    font-size: 1.2em;
+    border:solid black 1px;
+    text-indent:2%;    
+}
+
+form{
+    width:70%;
+    margin:0 auto;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:1em;
+    margin-top:3em;
+}
+
+button{
+    background-color:var( --rosso-labTv-colore);
+    width:20%;
+    height: 2.2em;
+    font-family: 'Montserrat', sans-serif;
+    color:var(--testo-colore);
+}
+
+button:hover{opacity: .5;}
+
+/* RISULTATI */
+
+.contenitore{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 1.5em;
+    margin-top: 100px;
+    padding:2em;
+}
+
+
+.mat-mdc-card{
+    background-color: #142524;
+    cursor:pointer;
+    transition:0.8s;
+    border-radius: 5px;
+}
+
+.mat-mdc-card:hover{
+    transform: scale(1.1) ;
+    transition:0.8s;
+    border-image: linear-gradient(to left,lightblue,darkblue) 1;
+}
+
+.mat-mdc-card-subtitle{
+    color:var(--testo-colore);
+    margin-bottom: 1em;
+}
+
+mat-card-title{
+    overflow:hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color:var(--testo-colore);
+}
+
+mat-card-header{display: flow-root;}

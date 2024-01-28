@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 export interface LoginForm {
   email: string;
@@ -10,7 +11,8 @@ export interface LoginForm {
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule,
   ]
 })
 export class LoginModule { 

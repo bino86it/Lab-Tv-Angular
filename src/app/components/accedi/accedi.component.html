@@ -1,7 +1,5 @@
-<p routerLink="accedi"></p>
 
-
-<div class="box">
+<div class="box" routerLink="accedi">
     <h2>ACCEDI</h2>
   
     <form (ngSubmit)="submitForm()" #loginForm="ngForm">
@@ -15,9 +13,9 @@
       
       <mat-form-field>
         <mat-label>la tua password</mat-label>
-        <input type="password" matInput name="password" ngModel required pattern="^(?=.*[A-Z])(?=.*\d).+$">
+        <input type="password" matInput name="password" ngModel required pattern="^(?=.*[A-Z])(?=.*\d).{8,}$">
         <mat-error *ngIf="loginForm['controls']['password']?.hasError('required')">La password è obbligatoria</mat-error>
-        <mat-error *ngIf="loginForm['controls']['password']?.hasError('pattern')">La password deve includere almeno una maiuscola e un numero</mat-error>
+        <mat-error *ngIf="loginForm['controls']['password']?.hasError('pattern')">Servono almeno 8 caratteri, una maiuscola e un numero</mat-error>
       </mat-form-field>
       
       

@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { MatButtonModule} from '@angular/material/button';
 import { MatIconModule} from '@angular/material/icon';
 import { MatCardModule} from '@angular/material/card';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule} from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu';
@@ -50,6 +50,7 @@ import { DettaglioFilmComponent } from './components/dettaglio-film/dettaglio-fi
     NgbModule,
     MatMenuModule,
     MatCheckboxModule,
+    ReactiveFormsModule,
     
   
     

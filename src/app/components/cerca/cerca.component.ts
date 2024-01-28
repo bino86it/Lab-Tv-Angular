@@ -6,6 +6,7 @@ import { MovieService } from 'src/app/services/movie.service';
 
 
 
+
 @Component({
   selector: 'app-cerca',
   templateUrl: './cerca.component.html',

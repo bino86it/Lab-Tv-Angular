@@ -1,9 +1,9 @@
-<p routerLink="contatti"></p>
 
-<div class="box">
+
+<!-- <div class="box" routerLink="contatti">
   <h2>CONTATTACI</h2>
 
-  <form action="">
+  <form [formGroup]="loginForm" (ngSubmit)="submitForm()" action="">
     <mat-form-field>
       <mat-label>Nome</mat-label>
       <input type="text" matInput>
@@ -13,6 +13,8 @@
       <mat-form-field>
         <mat-label>la tua Email</mat-label>
         <input type="email" matInput placeholder="pat@example.com" required>
+        <mat-error *ngIf="loginForm['controls']['email']?.hasError('required')">L'email è obbligatoria</mat-error>
+        <mat-error *ngIf="loginForm['controls']['email']?.hasError('pattern')">Inserisci un indirizzo email valido</mat-error>
       </mat-form-field>
     
     
@@ -30,4 +32,45 @@
   </form>
 
 
+</div> -->
+
+<!-- contatti.component.html -->
+
+
+<div class="box" routerLink="contatti">
+  <h2>CONTATTACI</h2>
+
+  <form [formGroup]="loginForm" (ngSubmit)="submitForm()" action="">
+    <mat-form-field>
+      <mat-label>Nome</mat-label>
+      <input type="text" matInput formControlName="nome" required pattern="^[a-zA-Z]{2,}$">
+      <mat-error *ngIf="loginForm['controls']['nome']?.hasError('required')">Il nome è obbligatorio</mat-error>
+        <mat-error *ngIf="loginForm['controls']['nome']?.hasError('pattern')">Il nome deve avere almeno due caratteri</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>La tua Email</mat-label>
+      <input type="email" matInput placeholder="pat@example.com" formControlName="email" required>
+      <mat-error *ngIf="loginForm.get('email')?.hasError('required')">L'email è obbligatoria</mat-error>
+      <mat-error *ngIf="loginForm.get('email')?.hasError('email')">Inserisci un indirizzo email valido</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Messaggio</mat-label>
+      <textarea matInput formControlName="messaggio" required minlength="20" pattern=".{20,}"></textarea>
+      <mat-error *ngIf="loginForm.get('messaggio')?.hasError('required')">Il messaggio non può essere vuoto</mat-error>
+      <mat-error *ngIf="loginForm.get('messaggio')?.hasError('pattern')">Il messaggio deve avere almeno 20 caratteri</mat-error>
+    </mat-form-field>
+
+    <div>
+      <label For="checkbox">
+        <input id="checkbox" formControlName="privacy" type="checkbox"> Accetto la normativa sulla privacy
+      </label>
+    </div>
+    <p *ngIf="(loginForm.valid) && loginForm.get('privacy')?.value === false">Devi accettare la normativa sulla privacy.</p>
+
+
+    
+    <button type="submit" mat-raised-button color="warn">Invia</button>
+  </form>
 </div>
